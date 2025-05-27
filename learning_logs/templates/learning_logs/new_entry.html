@@ -1,0 +1,11 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+<h1> 创建新笔记 </h1>
+<form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button name="submit">创建</button>
+</form>
+
+{% endblock content %}
